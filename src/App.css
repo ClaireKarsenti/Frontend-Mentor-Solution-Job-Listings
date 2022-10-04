@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  /* Primary Colors */
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+
+  /* Neutral Colors */
+  --light-grayish-cyan1: hsl(180, 52%, 96%); /* Background */
+  --light-grayish-cyan2: hsl(180, 31%, 95%); /* Filter Tablets */
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*
+=============== 
+Global Styles
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  font-size: 62.5%;
 }
-
-.App-header {
-  background-color: #282c34;
+main {
   min-height: 100vh;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--light-grayish-cyan1);
+}
+.container {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 20em;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  background-image: url(../public/assets/images/bg-header-desktop.svg);
+}
+
+/*
+=============== 
+Card component
+===============
+*/
+.card-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  width: 90em;
+  padding: 2em;
+  margin: 2em;
+  border-radius: 3px;
+  box-shadow: var(--desaturated-dark-cyan) 0px 8px 24px -15px;
+  transition: border-left 300ms;
 }
-
-.App-link {
-  color: #61dafb;
+.card-container:hover {
+  border-left: 3px solid var(--desaturated-dark-cyan);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 7em;
+}
+.text-container {
+  width: 100%; /* To fit the width of parent's div */
+  padding-left: 2em;
+}
+.name,
+.job-details {
+  color: var(--desaturated-dark-cyan);
+}
+.job,
+.details {
+  padding-top: 0.5em;
+}
+.name,
+.job,
+span.newJob,
+span.featured {
+  font-weight: 700;
+}
+.job {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.title {
+  margin-right: auto;
+  transition: color 300ms;
+}
+.title:hover {
+  cursor: pointer;
+  color: var(--desaturated-dark-cyan);
+}
+.job-details {
+  font-size: 1rem;
+  border-radius: 3px;
+  padding: 0.5rem;
+  background-color: var(--light-grayish-cyan2);
+  transition: background-color 400ms, color 300ms;
+}
+.job-details:hover {
+  cursor: pointer;
+  background-color: var(--desaturated-dark-cyan);
+  color: #fff;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  color: var(--dark-grayish-cyan);
+  font-weight: 500;
+  align-items: center;
+}
+span.dot {
+  background-color: var(--dark-grayish-cyan);
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  margin: 0 1em 0 1em;
+}
+span.newJob,
+span.featured {
+  border-radius: 6em;
+  padding: 0.4em 0.6em;
+  text-transform: uppercase;
+  color: #fff;
+}
+span.newJob {
+  background-color: var(--desaturated-dark-cyan);
+  margin: 0 0.7em 0 1.3em;
+}
+span.featured {
+  background-color: rgb(48, 47, 47);
 }
