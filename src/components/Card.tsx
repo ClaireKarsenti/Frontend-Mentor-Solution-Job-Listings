@@ -7,7 +7,7 @@ interface CardType {
 const Card: FC<CardType> = ({ job }) => {
   return (
     <>
-      {job.map(
+      {job?.map(
         (dataItem: {
           id: number;
           new?: boolean;
