@@ -15,6 +15,8 @@ const Card: FC<CardType> = ({ job }) => {
           languages: [];
           tools: [];
           logo: string;
+          level: string;
+          role: string;
           company: string;
           position: string;
           postedAt: string;
@@ -23,10 +25,19 @@ const Card: FC<CardType> = ({ job }) => {
         }) => {
           const newJob = dataItem.new;
           const featured = dataItem.featured;
-          const languages = dataItem.languages.join(' ');
-          const tools = dataItem.tools.join(' ');
-          const { id, logo, company, position, postedAt, contract, location } =
-            dataItem;
+          // const languages = dataItem.languages.join(' ');
+          // const tools = dataItem.tools.join(' ');
+          const {
+            id,
+            logo,
+            company,
+            position,
+            postedAt,
+            contract,
+            location,
+            level,
+            role,
+          } = dataItem;
 
           return (
             <div className="card-container" key={id}>
@@ -40,8 +51,51 @@ const Card: FC<CardType> = ({ job }) => {
 
                 <div className="job">
                   <div className="title">{position}</div>
-                  <div className="job-details">
-                    {languages} {tools}
+                  <div className="job-details-filters">
+                    {/* Role */}
+                    <button
+                      className="button-filter"
+                      key={role}
+                      value={role}
+                    >
+                      {role}
+                    </button>
+
+                    {/* Level */}
+                    <button
+                      className="button-filter"
+                      key={level}
+                      value={level}
+                    >
+                      {level}
+                    </button>
+
+                    {/* Languages */}
+                    {dataItem?.languages.map((language) => {
+                      return (
+                        <button
+                          className="button-filter"
+                          key={language}
+                          value={language}
+                        >
+                          {language}
+                        </button>
+                      );
+                    })}
+
+                    {/* Tools */}
+                    {dataItem?.tools.map((tools) => {
+                      return (
+                        <button
+                          className="button-filter"
+                          key={tools}
+                          value={tools}
+                          // onClick={(e) => addedFilters(e.target.value)}
+                        >
+                          {tools}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
