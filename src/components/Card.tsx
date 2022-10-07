@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import { FC, Key } from 'react';
 
 interface CardType {
-  job: any;
+  jobs: any;
 }
 
-const Card: FC<CardType> = ({ job }) => {
+const Card: FC<CardType> = ({ jobs }) => {
   return (
     <>
-      {job?.map(
+      {jobs?.map(
         (dataItem: {
           id: number;
           new?: boolean;
@@ -24,19 +24,20 @@ const Card: FC<CardType> = ({ job }) => {
           location: string;
         }) => {
           const newJob = dataItem.new;
-          const featured = dataItem.featured;
-          // const languages = dataItem.languages.join(' ');
-          // const tools = dataItem.tools.join(' ');
+
           const {
             id,
+            featured,
             logo,
             company,
             position,
             postedAt,
             contract,
             location,
+            languages,
             level,
             role,
+            tools,
           } = dataItem;
 
           return (
@@ -53,29 +54,21 @@ const Card: FC<CardType> = ({ job }) => {
                   <div className="title">{position}</div>
                   <div className="job-details-filters">
                     {/* Role */}
-                    <button
-                      className="button-filter"
-                      key={role}
-                      value={role}
-                    >
+                    <button className="button-filter" key={role} value={role}>
                       {role}
                     </button>
 
                     {/* Level */}
-                    <button
-                      className="button-filter"
-                      key={level}
-                      value={level}
-                    >
+                    <button className="button-filter" key={level} value={level}>
                       {level}
                     </button>
 
                     {/* Languages */}
-                    {dataItem?.languages.map((language) => {
+                    {languages?.map((language: string, index: Key) => {
                       return (
                         <button
                           className="button-filter"
-                          key={language}
+                          key={index}
                           value={language}
                         >
                           {language}
@@ -84,11 +77,11 @@ const Card: FC<CardType> = ({ job }) => {
                     })}
 
                     {/* Tools */}
-                    {dataItem?.tools.map((tools) => {
+                    {tools?.map((tools: string, index: Key) => {
                       return (
                         <button
                           className="button-filter"
-                          key={tools}
+                          key={index}
                           value={tools}
                           // onClick={(e) => addedFilters(e.target.value)}
                         >

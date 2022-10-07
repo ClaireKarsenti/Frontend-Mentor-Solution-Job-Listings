@@ -6,12 +6,12 @@ import datas from '../src/data.json';
 import Card from './components/Card';
 
 function App() {
-    const [job, setJob] = useState(datas);
+  const [jobs, setJobs] = useState(datas);
 
   return (
     <div className="wrapper">
       <div className="container">
-        <Card job={job} />
+        <Card jobs={jobs} />
       </div>
     </div>
   );
