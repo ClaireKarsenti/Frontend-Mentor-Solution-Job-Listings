@@ -38,8 +38,8 @@ function App() {
   // Filtering data
   let filteredData = jobs;
   // Loop through all applied filters
-  filters.forEach((item: any) => {
-    filteredData = filteredData.filter(
+  filters?.forEach((item: any) => {
+    filteredData = filteredData?.filter(
       (job: any) =>
         job.role === item ||
         job.level === item ||
