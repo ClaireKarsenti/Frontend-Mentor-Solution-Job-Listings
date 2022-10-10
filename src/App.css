@@ -43,8 +43,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 20em;
+  position: relative;
+  padding-top: 15em;
 }
 .wrapper {
   width: 100vw;
@@ -63,12 +63,11 @@ Card component
 ===============
 */
 .card-container {
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #fff;
-  width: 90em;
+  min-width: 90em;
   padding: 2em;
   margin: 2em;
   border-radius: 3px;
@@ -86,7 +85,8 @@ img {
   padding-left: 2em;
 }
 .name,
-.button-filter {
+.button-filter,
+.tag {
   color: var(--desaturated-dark-cyan);
 }
 .job,
@@ -96,6 +96,8 @@ img {
 .name,
 .job,
 .button-filter,
+.clear-button,
+.tag,
 span.newJob,
 span.featured {
   font-weight: 700;
@@ -160,4 +162,65 @@ span.newJob {
 }
 span.featured {
   background-color: rgb(48, 47, 47);
+}
+
+/*
+=============== 
+TagBar component
+===============
+*/
+.tagBox {
+  position: fixed;
+  top: 10em;
+  width: 94em;
+}
+.tagRow {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  margin: 2em;
+  height: 6em;
+  background-color: #fff;
+  border-radius: 0.3em;
+  box-shadow: var(--desaturated-dark-cyan) 0px 8px 24px -15px;
+}
+.clear-button {
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: 0;
+  padding-right: 1em;
+  color: var(--desaturated-dark-cyan);
+  cursor: pointer;
+}
+.clear-button:hover {
+  text-decoration: underline;
+}
+.tag {
+  border: none;
+  height: 2.8em;
+  padding: 0.5rem;
+  margin-left: 3em;
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+  background-color: var(--light-grayish-cyan2);
+}
+.cross-button {
+  border: none;
+  width: 2em;
+  height: 2.1em;
+  color: #fff;
+  background-color: var(--desaturated-dark-cyan);
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+  transition: background-color 400ms;
+  cursor: pointer;
+}
+.cross-button:hover {
+  background-color: black;
+}
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
