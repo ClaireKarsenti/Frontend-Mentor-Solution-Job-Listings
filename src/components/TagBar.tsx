@@ -8,9 +8,9 @@ interface TagBarType {
 
 const TagBar: FC<TagBarType> = ({ filters, removeFilter, clearAllFilters }) => {
   return (
-    <div className="tagBox">
+    <>
       {filters?.length > 0 && (
-        <div className="tagRow">
+        <div className="tagBox">
           <div className="filters">
             {filters.map((item: any) => (
               <>
@@ -25,13 +25,14 @@ const TagBar: FC<TagBarType> = ({ filters, removeFilter, clearAllFilters }) => {
                 </button>
               </>
             ))}
+
+            <button className="clear-button" onClick={() => clearAllFilters()}>
+              Clear
+            </button>
           </div>
-          <button className="clear-button" onClick={() => clearAllFilters()}>
-            Clear
-          </button>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

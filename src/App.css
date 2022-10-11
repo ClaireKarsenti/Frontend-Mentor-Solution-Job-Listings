@@ -77,6 +77,14 @@ Card component
 .card-container:hover {
   border-left: 3px solid var(--desaturated-dark-cyan);
 }
+.left {
+  display: flex;
+  flex-direction: row;
+}
+.right {
+  margin-left: auto;
+  margin-right: 0;
+}
 img {
   width: 7em;
 }
@@ -89,12 +97,13 @@ img {
 .tag {
   color: var(--desaturated-dark-cyan);
 }
-.job,
+.filters,
 .details {
   padding-top: 0.5em;
 }
 .name,
-.job,
+.filters,
+.title,
 .button-filter,
 .clear-button,
 .tag,
@@ -102,7 +111,7 @@ span.newJob,
 span.featured {
   font-weight: 700;
 }
-.job {
+.filters {
   font-size: 1.2em;
   display: flex;
   align-items: center;
@@ -115,6 +124,7 @@ span.featured {
 .title {
   margin-right: auto;
   transition: color 300ms;
+  padding: 1em 0 1em 0;
 }
 .title:hover {
   cursor: pointer;
@@ -163,6 +173,12 @@ span.newJob {
 span.featured {
   background-color: rgb(48, 47, 47);
 }
+.middle-line {
+  height: 0.1em;
+  width: 30em;
+  background: var(--dark-grayish-cyan);
+  display: none;
+}
 
 /*
 =============== 
@@ -172,11 +188,8 @@ TagBar component
 .tagBox {
   position: fixed;
   top: 10em;
-  width: 94em;
-}
-.tagRow {
-  display: flex;
-  flex-direction: row;
+  width: 90em;
+  display: flex-wrap;
   padding: 1em;
   margin: 2em;
   height: 6em;
@@ -196,16 +209,17 @@ TagBar component
 .clear-button:hover {
   text-decoration: underline;
 }
-.tag {
+p.tag {
+  /* 3 */
   border: none;
-  height: 2.8em;
-  padding: 0.5rem;
+  min-height: 2.8em;
+  padding: 0.5em;
   margin-left: 3em;
   border-top-left-radius: 0.3em;
   border-bottom-left-radius: 0.3em;
   background-color: var(--light-grayish-cyan2);
 }
-.cross-button {
+button.cross-button {
   border: none;
   width: 2em;
   height: 2.1em;
@@ -221,6 +235,17 @@ TagBar component
 }
 .filters {
   display: flex;
-  flex-direction: row;
-  align-items: center;
 }
+
+/*
+=============== 
+Responsive
+===============
+*/
+/* @media screen and (max-width: 900px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+
+  } 
+}*/
