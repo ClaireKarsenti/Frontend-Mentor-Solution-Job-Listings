@@ -30,10 +30,9 @@ const Card: FC<CardType> = ({ jobs, handleFilters }) => {
               <li>{jobs.location}</li>
             </ul>
           </div>
+          <div className="middle-line"></div>
         </div>
       </div>
-
-      <div className="middle-line"></div>
 
       <div className="right">
         <div className="filters">

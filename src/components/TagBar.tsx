@@ -11,25 +11,22 @@ const TagBar: FC<TagBarType> = ({ filters, removeFilter, clearAllFilters }) => {
     <>
       {filters?.length > 0 && (
         <div className="tagBox">
-          <div className="filters">
-            {filters.map((item: any) => (
-              <>
-                <p className="tag" key={item}>
-                  {item}
-                </p>
+          {filters?.map((item: any) => (
+            <div className="filters">
+              <p className="tag" key={item}>
+                {item}
                 <button
                   className="cross-button"
                   onClick={() => removeFilter(item)}
                 >
                   X
                 </button>
-              </>
-            ))}
-
-            <button className="clear-button" onClick={() => clearAllFilters()}>
-              Clear
-            </button>
-          </div>
+              </p>
+            </div>
+          ))}
+          <button className="clear-button" onClick={() => clearAllFilters()}>
+            Clear
+          </button>
         </div>
       )}
     </>

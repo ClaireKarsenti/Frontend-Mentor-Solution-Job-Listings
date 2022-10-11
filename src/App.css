@@ -67,7 +67,7 @@ Card component
   flex-direction: row;
   align-items: center;
   background-color: #fff;
-  min-width: 90em;
+  width: 90em;
   padding: 2em;
   margin: 2em;
   border-radius: 3px;
@@ -174,10 +174,11 @@ span.featured {
   background-color: rgb(48, 47, 47);
 }
 .middle-line {
-  height: 0.1em;
-  width: 30em;
-  background: var(--dark-grayish-cyan);
+  height: 0.07em;
+  width: 20em;
+  background-color: var(--dark-grayish-cyan);
   display: none;
+  margin: 1em 0 0.5em 0;
 }
 
 /*
@@ -185,11 +186,13 @@ span.featured {
 TagBar component
 ===============
 */
+
 .tagBox {
   position: fixed;
   top: 10em;
   width: 90em;
-  display: flex-wrap;
+  display: flex;
+  flex-direction: row;
   padding: 1em;
   margin: 2em;
   height: 6em;
@@ -203,27 +206,29 @@ TagBar component
   margin-left: auto;
   margin-right: 0;
   padding-right: 1em;
-  color: var(--desaturated-dark-cyan);
+  color: var(--dark-grayish-cyan);
   cursor: pointer;
+  transition: all 500ms ease-out;
 }
 .clear-button:hover {
+  color: var(--desaturated-dark-cyan);
   text-decoration: underline;
 }
 p.tag {
-  /* 3 */
   border: none;
-  min-height: 2.8em;
-  padding: 0.5em;
-  margin-left: 3em;
+  min-height: 2em;
+  padding-left: 0.5em;
+  /* margin-left: 3em; */
   border-top-left-radius: 0.3em;
   border-bottom-left-radius: 0.3em;
   background-color: var(--light-grayish-cyan2);
 }
-button.cross-button {
+.cross-button {
   border: none;
   width: 2em;
-  height: 2.1em;
+  height: 2em;
   color: #fff;
+  margin-left: 0.5em;
   background-color: var(--desaturated-dark-cyan);
   border-top-right-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
@@ -234,7 +239,8 @@ button.cross-button {
   background-color: black;
 }
 .filters {
-  display: flex;
+  margin-left: 1em;
+  flex-wrap: wrap;
 }
 
 /*
@@ -242,10 +248,43 @@ button.cross-button {
 Responsive
 ===============
 */
-/* @media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
+  .wrapper {
+ 
+  background-image: url(../public/assets/images/bg-header-mobile.svg);
+}
   .card-container {
     display: flex;
     flex-direction: column;
-
-  } 
-}*/
+    width: 25em;
+    padding: 0;
+  }
+  .left {
+    flex-direction: column;
+  }
+  img {
+    width: 4em;
+    position: relative;
+    bottom: 2em;
+    left: -0.5em;
+  }
+  .text-container {
+    padding: 0;
+    justify-content: flex-start;
+  }
+  .right {
+    margin: 0 0 1em 2em;
+  }
+  .middle-line {
+    display: flex;
+  }
+  .tagBox {
+    width: 25em;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .tagContainer {
+    display: flex;
+    flex-direction: row;
+  }
+}
