@@ -5,6 +5,7 @@ import data from '../src/data.json';
 
 import Card from './components/Card';
 import TagBar from './components/TagBar';
+import Footer from './components/Footer';
 
 function App() {
   const [jobs, setJobs] = useState<any>(data);
@@ -60,6 +61,7 @@ function App() {
           <Card key={item.id} jobs={item} handleFilters={handleFilters} />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }

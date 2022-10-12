@@ -59,7 +59,7 @@ body {
 
 /*
 =============== 
-Card component
+Card Styles
 ===============
 */
 .card-container {
@@ -183,7 +183,7 @@ span.featured {
 
 /*
 =============== 
-TagBar component
+TagBar Styles
 ===============
 */
 
@@ -245,14 +245,34 @@ p.tag {
 
 /*
 =============== 
-Responsive
+Footer styles
 ===============
 */
-@media screen and (max-width: 900px) {
-  .wrapper {
- 
-  background-image: url(../public/assets/images/bg-header-mobile.svg);
+.attribution {
+  font-size: 1em;
+  line-height: 2em;
+  text-align: center;
+  color: var(--very-dark-grayish-cyan);
+  margin-bottom: 1em;
 }
+.attribution a {
+  text-decoration: none;
+  color: var(--very-dark-grayish-cyan);
+  font-weight: bold;
+}
+.attribution a:hover {
+  color: var(--desaturated-dark-cyan);
+}
+
+/*
+==================
+Responsive Styles
+==================
+*/
+@media all and (max-width: 900px) {
+  .wrapper {
+    background-image: url(../public/assets/images/bg-header-mobile.svg);
+  }
   .card-container {
     display: flex;
     flex-direction: column;
