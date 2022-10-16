@@ -51,6 +51,7 @@ function App() {
 
   return (
     <div className="wrapper">
+      <header className="top-img"></header>
       <div className="container">
         <TagBar
           filters={filters}

@@ -43,18 +43,20 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  position: relative;
-  padding-top: 15em;
+  position: absolute;
+  top: 20em;
 }
 .wrapper {
   width: 100vw;
   height: 100vh;
-  display: grid;
-  place-items: center;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: contain;
-  background-image: url(../public/assets/images/bg-header-desktop.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background: url(../public/assets/images/bg-header-desktop.svg)
+    var(--light-grayish-cyan1) no-repeat top;
 }
 
 /*
@@ -271,7 +273,7 @@ Responsive Styles
 */
 @media all and (max-width: 900px) {
   .wrapper {
-    background-image: url(../public/assets/images/bg-header-mobile.svg);
+    background: url(../public/assets/images/bg-header-mobile.svg) no-repeat;
   }
   .card-container {
     display: flex;
