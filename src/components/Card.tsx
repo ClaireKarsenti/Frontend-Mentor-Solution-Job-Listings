@@ -10,7 +10,7 @@ const Card: FC<CardType> = ({ jobs, handleFilters }) => {
   const featured = jobs.featured;
 
   return (
-    <div className="card-container" key={jobs.id}>
+    <div className={featured ? 'featuredCard' : 'card-container'} key={jobs.id}>
       <div className="left">
         <img src={jobs.logo} alt={`${jobs.company}`} />
         <div className="text-container">

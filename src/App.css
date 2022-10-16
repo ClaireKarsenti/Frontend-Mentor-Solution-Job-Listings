@@ -74,7 +74,8 @@ header {
 Card Styles
 ===============
 */
-.card-container {
+.card-container,
+.featuredCard {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -86,7 +87,7 @@ Card Styles
   box-shadow: var(--desaturated-dark-cyan) 0px 8px 24px -15px;
   transition: border-left 300ms;
 }
-.card-container:hover {
+.featuredCard {
   border-left: 3px solid var(--desaturated-dark-cyan);
 }
 .left {
@@ -303,7 +304,8 @@ Responsive Styles
     background: url('/public/assets/images/bg-header-mobile.svg'),
       hsl(180, 29%, 50%) no-repeat;
   }
-  .card-container {
+  .card-container,
+  .featuredCard {
     display: flex;
     flex-direction: column;
     width: 25em;
