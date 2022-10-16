@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <header className="top-img"></header>
+      <header></header>
       <div className="container">
         <TagBar
           filters={filters}
@@ -62,7 +62,7 @@ function App() {
           <Card key={item.id} jobs={item} handleFilters={handleFilters} />
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -1,15 +1,15 @@
 const Footer = () => {
   return (
-    <footer className="attribution">
-      <p>
-        Challenge by&nbsp;
-        <a href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62">
+    <footer>
+      <p className="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt">
           Frontend Mentor
         </a>
         .
       </p>
-      <p>
-        Coded by&nbsp;
+      <p className="attribution">
+        Coded by
         <a href="https://www.linkedin.com/in/claire-karsenti/">
           Claire Karsenti
         </a>
@@ -17,6 +17,6 @@ const Footer = () => {
       </p>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
