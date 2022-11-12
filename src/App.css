@@ -31,7 +31,6 @@ html {
   font-size: 62.5%;
 }
 main {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -40,7 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: var(--light-grayish-cyan1);
 }
 header {
@@ -53,6 +52,7 @@ header {
     hsl(180, 29%, 50%) no-repeat;
   background-size: cover;
 }
+/* Jobs component */
 .container {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ header {
 }
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  min-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -199,7 +199,6 @@ span.featured {
 TagBar Styles
 ===============
 */
-
 .tagBox {
   position: fixed;
   top: 10em;
@@ -262,16 +261,15 @@ Footer Styles
 ===============
 */
 footer {
-  justify-self: flex-end;
-  text-align: center;
+  place-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 0.8em;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.5em;
 }
 .attribution,
 a {
@@ -279,6 +277,7 @@ a {
 }
 a {
   font-weight: bold;
+  transition: color 0.5s ease;
 }
 a:link {
   text-decoration: none;

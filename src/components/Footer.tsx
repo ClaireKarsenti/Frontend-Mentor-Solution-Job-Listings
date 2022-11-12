@@ -2,14 +2,14 @@ const Footer = () => {
   return (
     <footer>
       <p className="attribution">
-        Challenge by
+        Challenge by{' '}
         <a href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt">
           Frontend Mentor
         </a>
         .
       </p>
       <p className="attribution">
-        Coded by
+        Coded by{' '}
         <a href="https://www.linkedin.com/in/claire-karsenti/">
           Claire Karsenti
         </a>

@@ -27,7 +27,21 @@ test('renders Header component correctly', () => {
 
 // Card component
 test('renders Card component correctly', () => {
-  render(<Card jobs={[]} handleFilters={undefined} />);
+  render(<Card handleFilters={undefined} jobs={{
+    id: 0,
+    company: '',
+    logo: '',
+    new: false,
+    featured: false,
+    position: '',
+    role: '',
+    level: '',
+    postedAt: '',
+    contract: '',
+    location: '',
+    languages: undefined,
+    tools: undefined
+  }} />);
   screen.debug();
 });
 
