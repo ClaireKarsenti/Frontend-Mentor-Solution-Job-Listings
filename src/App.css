@@ -49,7 +49,7 @@ header {
   width: 100%;
   height: 130px;
   background: url('/public/assets/images/bg-header-desktop.svg'),
-    hsl(180, 29%, 50%) no-repeat;
+    var(--desaturated-dark-cyan) no-repeat;
   background-size: cover;
 }
 /* Jobs component */
@@ -301,7 +301,7 @@ Responsive Styles
 @media (max-width: 900px) {
   header {
     background: url('/public/assets/images/bg-header-mobile.svg'),
-      hsl(180, 29%, 50%) no-repeat;
+      var(--desaturated-dark-cyan) no-repeat;
   }
   .card-container,
   .featuredCard {
