@@ -1,7 +1,7 @@
 import { useState} from 'react';
 import TagBar from './TagBar';
 import Card from './Card';
-import job from '../data'
+import job from '../data/data'
 
 const Jobs=() => {
   const [jobs] = useState<any>(job);

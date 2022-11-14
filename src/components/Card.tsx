@@ -1,5 +1,5 @@
 import { FC, Key } from 'react';
-import { jobCategory } from "../data";
+import { jobCategory } from "../data/data";
 
 interface CardType {
   jobs: jobCategory;
