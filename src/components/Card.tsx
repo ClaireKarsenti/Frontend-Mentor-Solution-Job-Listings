@@ -1,7 +1,7 @@
 import { FC, Key } from 'react';
 import { jobCategory } from "../data/data";
 
-interface CardType {
+export interface CardType {
   jobs: jobCategory;
   handleFilters: any;
 }

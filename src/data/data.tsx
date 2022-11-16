@@ -14,7 +14,7 @@ export type jobCategory = {
   tools: any,
 };
 
-const job: jobCategory[] = [
+export const job: jobCategory[] = [
   {
     id: 1,
     company: 'Photosnap',
@@ -166,5 +166,3 @@ const job: jobCategory[] = [
     tools: ['React', 'Sass'],
   }
 ];
-
-export default job;

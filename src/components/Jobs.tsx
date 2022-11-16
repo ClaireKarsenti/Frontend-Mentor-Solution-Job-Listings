@@ -1,10 +1,10 @@
 import { useState} from 'react';
 import TagBar from './TagBar';
 import Card from './Card';
-import job from '../data/data'
+import { job, jobCategory } from '../data/data';
 
 const Jobs=() => {
-  const [jobs] = useState<any>(job);
+  const [jobs] = useState<jobCategory[]>(job);
   const [filters, setFilters] = useState<string[]>([]);
 
   // Filtering data
